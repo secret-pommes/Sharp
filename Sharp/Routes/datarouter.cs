@@ -9,7 +9,7 @@ namespace Sharp.Routes
         {
             var app = web.MapGroup("/datarouter");
 
-            app.MapGet("/api/v1/public/data", (HttpContext c) =>
+            app.MapPost("/api/v1/public/data", (HttpContext c) =>
             {
                 c.Response.StatusCode = 204;
                 return "";

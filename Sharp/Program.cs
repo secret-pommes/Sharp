@@ -4,22 +4,16 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.Hosting;
 using Sharp.Routes;
+using Sharp.Utils;
 
 var builder = WebApplication.CreateBuilder(args);   
 var app = builder.Build();
 
+app.MapWaitingroom();
+app.MapAccount();
 app.MapDatarouter();
 app.MapContent();
 
-
-app.MapGet("/{*url}", (HttpContext context) =>
-{
-    Console.WriteLine($"Unmatched route accessed: {context.Request.Path}");
-
-    context.Response.StatusCode = 404;
-    context.Response.Headers.Add("Error", "404");
-
-    return "Error 404: Not Found";
-});
+app.MapGet("/{*url}", (HttpContext c) => Error.NotFound(c));
 
 app.Run();
