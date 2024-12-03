@@ -51,12 +51,12 @@ namespace Sharp.Routes
             app.MapDelete("/api/oauth/sessions/kill", async (HttpContext c) =>
             {
                 c.Response.StatusCode = 204;
-                return "";
+                await Task.CompletedTask;
             });
 
             app.MapDelete("/api/oauth/sessions/kill/{access_token}", async (HttpContext c) => {
                 c.Response.StatusCode = 204;
-                return "";
+                await Task.CompletedTask;
             });
 
             app.MapGet("/api/public/account/{accountId}", async (HttpContext c) =>
