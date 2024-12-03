@@ -6,8 +6,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Routes\NewFolder\**" />
+    <EmbeddedResource Remove="Routes\NewFolder\**" />
+    <None Remove="Routes\NewFolder\**" />
+  </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.App" Version="6.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Resources\Profiles\" />
+		<None Update="Resources\keychain.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 
 
