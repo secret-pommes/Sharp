@@ -8,7 +8,8 @@ using Sharp.Routes;
 var builder = WebApplication.CreateBuilder(args);   
 var app = builder.Build();
 
-app.Mapdatarouter();
+app.MapDatarouter();
+app.MapContent();
 
 
 app.MapGet("/{*url}", (HttpContext context) =>
