@@ -98,7 +98,7 @@ namespace Sharp.Routes
 
             app.MapGet("/api/calendar/v1/timeline", async (HttpContext c) =>
             {
-                var season = 7;
+                var season = 3;
 
                 var response = new TimelineResponse
                 {
@@ -144,7 +144,11 @@ namespace Sharp.Routes
                 await c.Response.WriteAsJsonAsync(response);
             });
 
-
+            app.MapGet("/api/matchmaking/session/findPlayer/{accountId}", (HttpContext c) =>
+            {
+                c.Response.StatusCode = 204;
+                return "";
+            });
         }
     }
 }
