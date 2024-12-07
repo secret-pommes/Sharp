@@ -1,5 +1,8 @@
 # Sharp
 
+### Note:
+- I did not say this is good or that C# is good for this kind of stuff.
+
 ### Features
 
 - Go into Lobby.
